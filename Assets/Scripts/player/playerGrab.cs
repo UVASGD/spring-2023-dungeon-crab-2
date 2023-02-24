@@ -12,6 +12,7 @@ public class playerGrab : MonoBehaviour
     private Collider itemCollider = null;
     private playermovement movementScript;
     public PhysicMaterial materialToApplyToHeldThings;
+    public Vector3 grabPositionChange;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class playerGrab : MonoBehaviour
                 {
                     if (hit.rigidbody)
                     {
+                        hit.transform.position += grabPositionChange;
                         joint = gameObject.AddComponent<FixedJoint>() as FixedJoint;
                         joint.connectedBody = hit.rigidbody;
                         joint.breakForce = breakGrabForce;

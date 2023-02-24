@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Based Off: https://www.monkeykidgc.com/2021/03/unity-moving-platform.html#comments
-public class MovePlatform : MonoBehaviour
+public class MovePlatform : ActivatableObject
 {
     public GameObject platformPathStart;
     public GameObject platformPathEnd;
@@ -12,7 +12,6 @@ public class MovePlatform : MonoBehaviour
     private Vector3 endPosition;
     private Rigidbody rBody;
 
-    public bool isActive = true;
 
     private playermovement character;
     public Vector3 moveDirection;
@@ -24,7 +23,7 @@ public class MovePlatform : MonoBehaviour
         startPosition = platformPathStart.transform.position;
         endPosition = platformPathEnd.transform.position;
         rBody.MovePosition(platformPathStart.transform.position);
-        if (isActive)
+        if (isCurrentlyActive)
         {
             StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, speed));
         }
@@ -33,7 +32,7 @@ public class MovePlatform : MonoBehaviour
 
     void Update()
     {
-        if (!isActive) {
+        if (!isCurrentlyActive) {
             return;
         }
 
@@ -68,12 +67,12 @@ public class MovePlatform : MonoBehaviour
 
     public void activate()
     {
-        isActive = true;
+        isCurrentlyActive = true;
     }
 
     public void deactivate()
     {
-        isActive = false;
+        isCurrentlyActive = false;
     }
 
     private void OnTriggerEnter(Collider col)

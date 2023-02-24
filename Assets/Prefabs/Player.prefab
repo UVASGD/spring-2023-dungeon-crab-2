@@ -145,8 +145,9 @@ MonoBehaviour:
   layersToGrabFrom:
     serializedVersion: 2
     m_Bits: 1
-  breakGrabForce: 120
+  breakGrabForce: 160
   materialToApplyToHeldThings: {fileID: 13400000, guid: f47b43414982a124dba6e39b05ef7843, type: 2}
+  grabPositionChange: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &108856184
 PrefabInstance:
   m_ObjectHideFlags: 0

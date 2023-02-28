@@ -20,8 +20,10 @@ public class flammableParent : MonoBehaviour
             if (this.GetComponent<BoxCollider>() != null)
                 this.GetComponent<BoxCollider>().enabled = false;
             if (spawnThingOnBurnup && thingToSpawn != null)
+            {
                 thingToSpawn.name = "Object spawned by " + this.name;
-                Instantiate(thingToSpawn, transform.position + new Vector3(0,0.4f,0), Quaternion.identity);
+                Instantiate(thingToSpawn, transform.position + new Vector3(0, 0.4f, 0), Quaternion.identity);
+            }
         }
         Destroy(this.gameObject);
 

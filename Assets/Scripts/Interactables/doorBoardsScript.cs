@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class doorBoardsScript : MonoBehaviour
 {
-    public flammableParent colider;
+    public flammableParent collider;
     private string id;
     private GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
-        id = SceneManager.GetActiveScene().name + this.transform.ToString();
+        id = SceneManager.GetActiveScene().name + this.name;
         if (GameManager.instance.burnedThings.Contains(id) == true)
         {
             Destroy(this.gameObject);
@@ -21,7 +21,7 @@ public class doorBoardsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (colider == null)
+        if (collider == null)
         {
             if(GameManager.instance.burnedThings.Contains(id) == false)
             {

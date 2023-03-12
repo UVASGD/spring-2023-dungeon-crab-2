@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Doublsb.Dialog;
 
 // This script is for the game manager, which is an object that keeps track of various game data/states that persit between scenes.
 // There should be one game manager in every scene. Objects can reference the game manager in a scene in order to access this data.
@@ -12,6 +13,15 @@ public class GameManager : MonoBehaviour
 {
     //static reference to the current GameManager- can be accessed from anywhere (including other scripts!) with GameManager.instance
     public static GameManager instance;
+
+    public enum GameState
+    {
+        Play,
+        Talk,
+        Pause
+    }
+
+    public GameState currentState = GameState.Play;
 
     //information that's stored between scenes on number of keys the player currently has, water/lava levels
     public int numberOfKeys = 0;
@@ -43,6 +53,8 @@ public class GameManager : MonoBehaviour
     private AudioManager am = null;
     bool restarting = false;
 
+    public DialogManager dm;
+
     private void Awake()
     {
         // this is the code to ensure there's only one gameManager in a scene at a time
@@ -66,6 +78,7 @@ public class GameManager : MonoBehaviour
         {
             am = AudioManager.instance;
         }
+        dm.Hide();
     }
 
     // Update is called once per frame
@@ -77,6 +90,13 @@ public class GameManager : MonoBehaviour
             {
                 restarting = true;
                 RestartScene();
+            }
+        }
+        if(currentState == GameState.Talk)
+        {
+            if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
+            {
+                dm.Click_Window();
             }
         }
     }

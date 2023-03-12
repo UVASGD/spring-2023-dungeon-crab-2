@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1400464975}
   - component: {fileID: 1400464974}
   - component: {fileID: 474285577}
+  - component: {fileID: 1580781814}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -148,6 +149,23 @@ MonoBehaviour:
   breakGrabForce: 160
   materialToApplyToHeldThings: {fileID: 13400000, guid: f47b43414982a124dba6e39b05ef7843, type: 2}
   grabPositionChange: {x: 0, y: 0.1, z: 0}
+--- !u!114 &1580781814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548561495208863307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05504b3455263b94f9df2bbe72e8e4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkRange: 2
+  layersToTalkTo:
+    serializedVersion: 2
+    m_Bits: 1
+  cooldownAfterTalking: 0.5
 --- !u!1001 &108856184
 PrefabInstance:
   m_ObjectHideFlags: 0

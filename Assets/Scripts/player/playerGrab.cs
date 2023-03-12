@@ -73,6 +73,6 @@ public class playerGrab : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         //draws a vector that's the same as the ray cast for grabbing something (shows the range)
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward * grabRange);
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * grabRange);
     }
 }

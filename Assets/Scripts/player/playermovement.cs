@@ -62,8 +62,14 @@ public class playermovement : MonoBehaviour
     void Update()
     {
         // take inputs for later use on the rigidbody
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        if(GameManager.instance.currentState != GameManager.GameState.Play)
+        {
+            horizontal = 0f;
+            vertical = 0f;
+        }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
         // convert those inputs into a direction to move the player relative to the camera
@@ -95,6 +101,12 @@ public class playermovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            jumpHeld = false;
+        }
+
+        if(GameManager.instance.currentState != GameManager.GameState.Play)
+        {
+            jumpInput = false;
             jumpHeld = false;
         }
 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class doorBoardsScript : MonoBehaviour
 {
-    public flammableParent collider;
+    public flammableParent col;
     private string id;
     private GameManager gm;
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class doorBoardsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (collider == null)
+        if (col == null)
         {
             if(GameManager.instance.burnedThings.Contains(id) == false)
             {

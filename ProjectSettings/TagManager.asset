@@ -10,6 +10,7 @@ TagManager:
   - Coals
   - Grate
   - Ladder
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX

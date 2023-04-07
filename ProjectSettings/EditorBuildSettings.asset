@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo2Scene1.unity
     guid: a4df822e851ca8e40b8a76428e654cd8
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/Jimmy2.unity
+    guid: 146f529e7268f644cad7b7dcf2ffc274
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/JimmyTesting1.unity
+    guid: f22f4a1019efcc7459e9f7cadd51d54a
   m_configObjects: {}

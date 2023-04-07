@@ -11,6 +11,7 @@ TagManager:
   - Grate
   - Ladder
   - Pot
+  - DialogueTrigger
   layers:
   - Default
   - TransparentFX

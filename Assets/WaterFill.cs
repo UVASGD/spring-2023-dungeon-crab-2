@@ -11,40 +11,37 @@ public class WaterFill : MonoBehaviour
 
     }
 
-    Vector3 fillSpeed = new Vector3(0f,0.003f,0f);
-    Vector3 growSpeed = new Vector3(0.0001f,0.0f,0.0001f);
-    Vector3 shrinkSpeed = new Vector3(0.0000000001f, 0.0f, 0.0000000001f);
+    public GameObject FillZone;
+    public GameObject water;
+    public Vector3 fillSpeed = new Vector3(0f,0.003f,0f);
+    public Vector3 growSpeed = new Vector3(0.0001f,0.0f,0.0001f);
+    public Vector3 shrinkSpeed = new Vector3(0.0000000001f, 0.0f, 0.0000000001f);
     //float empty = 0.0f;
-    float low = 0.25f;
-    float mid = 0.5f;
-    float full = 0.75f;
+    //public float low = 0.25f;
+    public float mid = 0.5f;
+    //public float full = 0.75f;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerStay(Collider other)
     {
-        // add a delay and bounding box later
-        if (Input.GetKey(KeyCode.F)){
-            // fill while not full
-            if (transform.position.y < full) {
-                transform.position += fillSpeed;
+        float full = FillZone.transform.position.y + 0.37f;
+        float low = FillZone.transform.position.y -0.35f;
+
+        if (other.tag == "Water")
+        {
+            // water = FillZone.transform.Find("Circular Water");
+            // add a delay and bounding box later
+            if (water.transform.position.y < full)
+            {
+                water.transform.position += fillSpeed;
             }
 
             //size appropriately as filling
-            if (transform.position.y <= low)
+            if (water.transform.position.y <= low)
             {
-                transform.localScale += growSpeed;
-            } 
-            else if (transform.position.y > low && transform.position.y < mid)
-            {
-                //transform.localScale += sizeSpeed;
+                water.transform.localScale += growSpeed;
             }
-            else if (transform.position.y >= mid)
-            {
-                //transform.localScale -= shrinkSpeed;
-            }
+
         }
-
-        
-
     }
+
 }

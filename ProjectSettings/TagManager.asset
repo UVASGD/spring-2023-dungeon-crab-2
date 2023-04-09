@@ -12,6 +12,7 @@ TagManager:
   - Ladder
   - Pot
   - DialogueTrigger
+  - Ice
   layers:
   - Default
   - TransparentFX

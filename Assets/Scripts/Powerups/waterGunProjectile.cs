@@ -34,7 +34,7 @@ public class waterGunProjectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag != "Player" && (other.isTrigger == false || other.tag=="Lava") && other.tag != "Grate")
+        if(other.tag != "Player" && (other.isTrigger == false || other.tag=="Lava") && other.tag != "Grate" && other.tag != "Pot")
         {
             destroy = true;
 

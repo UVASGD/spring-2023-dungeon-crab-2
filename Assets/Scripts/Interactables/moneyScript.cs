@@ -23,7 +23,7 @@ public class moneyScript : MonoBehaviour
     // rotating animation
     void Update()
     {
-        this.transform.Rotate(new Vector3(0, 0, 1));
+        this.transform.Rotate(new Vector3(0, 0, (float)0.7));
     }
 
     // collect the money if the player walks into the collider trigger

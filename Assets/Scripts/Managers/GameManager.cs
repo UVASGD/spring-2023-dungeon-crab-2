@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
     public void moneyObtained()
     {
         numberofMoney++;
+        Debug.Log(numberofMoney);
     }
 
     //set the water level to a given int value. Water objects will look for the water level to determine if they need to raise/lower.

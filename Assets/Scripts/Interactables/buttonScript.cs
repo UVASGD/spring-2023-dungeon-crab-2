@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class buttonScript : MonoBehaviour
 {
-    public bool isActive; //Boolean that controls whether the button is active
-    public List<GameObject> thingsOnButton = new List<GameObject>();
+
+    private List<GameObject> thingsOnButton = new List<GameObject>();
     private int stepsUntilCheckObject = 10;     //determines how often a button checks to make sure all the objects that were on it still exist (in terms of Physics steps)
                                                 // (it's implemented like this to improve performance- fewer iterations over the list)
 
-    public bool buttonOpensGrate = true; //Whether the button opens or closes the grate
-    public List<Grate> grateList = new List<Grate>(); //List of Grates controlled by the button
-
-    public bool buttonActivatesPlatform = true;
-    public List<MovePlatform> platformList = new List<MovePlatform>(); //List of Platforms controlled by the button
+    // list of things to activate when something is on the button
+    public List<ActivatableObject> thingsToActivate;
+    private bool thingsAreActive = false;
 
     //List of Tags that cannot trigger the button
     //TODO: Should this instead be a list of items that do trigger the button?
@@ -39,27 +37,6 @@ public class buttonScript : MonoBehaviour
             if(thingsOnButton.Count > 0)
             {
                 thingsOnButton.RemoveAll(x => x == null);
-                if (thingsOnButton.Count == 0)
-                {
-                    if (buttonOpensGrate)
-                    {
-                        closeAllGrates();
-                    }
-                    else
-                    {
-                        openAllGrates();
-                    }
-
-                    if (buttonActivatesPlatform)
-                    {
-                        deactivateAllPlatforms();
-                    }
-                    else
-                    {
-                        activateAllPlatforms();
-                    }
-
-                }
             }
             stepsUntilCheckObject = 10;
         }
@@ -67,6 +44,15 @@ public class buttonScript : MonoBehaviour
         {
             stepsUntilCheckObject--;
         }
+
+        if(thingsAreActive && thingsOnButton.Count == 0)
+        {
+            setInactive();
+        }else if(!thingsAreActive && thingsOnButton.Count > 0)
+        {
+            setActive();
+        }
+
     }
    
 
@@ -81,22 +67,7 @@ public class buttonScript : MonoBehaviour
         thingsOnButton.Add(other.gameObject);
         if (thingsOnButton.Count > 0){
 
-            if (buttonOpensGrate)
-            {
-                openAllGrates();
-            }
-            else
-            {
-                closeAllGrates();
-            }
-
-            if (buttonActivatesPlatform)
-            {
-                activateAllPlatforms();
-            }
-            else {
-                deactivateAllPlatforms();
-            }
+            
         }
         
     }
@@ -112,66 +83,38 @@ public class buttonScript : MonoBehaviour
         thingsOnButton.Remove(other.gameObject);
         if (thingsOnButton.Count == 0)
         {
-            if (buttonOpensGrate)
-            {
-                closeAllGrates();
-            }
-            else {
-                openAllGrates();
-            }
-
-            if (buttonActivatesPlatform)
-            {
-                deactivateAllPlatforms();
-            }
-            else
-            {
-                activateAllPlatforms();
-            }
-
+            setInactive();
         }
 
+    }
+
+    private void setActive()
+    {
+        foreach(ActivatableObject obj in thingsToActivate)
+        {
+            obj.isCurrentlyActive = true;
+        }
+        thingsAreActive = true;
+    }
+
+    private void setInactive()
+    {
+        foreach (ActivatableObject obj in thingsToActivate)
+        {
+            obj.isCurrentlyActive = false;
+        }
+        thingsAreActive = false;
     }
 
     private bool isTriggerActive(Collider other) {
         //Break method if the button isn't active for safety
         //don't trigger if tag is in list, for example, fire in crates don't trigger the button
-        if (isActive && !tagDoesntTriggerButton.Contains(other.gameObject.tag))
+        if (!tagDoesntTriggerButton.Contains(other.gameObject.tag))
         {
             return true;
         }
 
         return false;
-    }
-
-    private void openAllGrates() {
-        foreach (Grate g in grateList) {
-            g.open();
-        }
-    }
-
-    private void closeAllGrates()
-    {
-        foreach (Grate g in grateList)
-        {
-            g.close();
-        }
-    }
-
-    private void activateAllPlatforms()
-    {
-        foreach (MovePlatform p in platformList)
-        {
-            p.activate();
-        }
-    }
-
-    private void deactivateAllPlatforms()
-    {
-        foreach (MovePlatform p in platformList)
-        {
-            p.deactivate();
-        }
     }
 
 }

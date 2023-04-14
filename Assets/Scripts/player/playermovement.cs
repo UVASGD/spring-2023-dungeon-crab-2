@@ -32,6 +32,7 @@ public class playermovement : MonoBehaviour
     public float maxSpeed = 6f;
     public float acceleration = 2f;
     public float deccelerationConstant = 0.1f;
+    public float deccelerationConstantOnIce = 0.5f;
     public float jumpForce = 15f;
 
     public float groundCheckDistance = 0.4f;
@@ -46,6 +47,9 @@ public class playermovement : MonoBehaviour
     public Vector3 externalMoveSpeed = new Vector3(0, 0, 0);
 
     public bool turnInDirectionOfMovement = true;
+
+    public PhysicMaterial iceMaterial;
+    public bool isOnIce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,8 +66,14 @@ public class playermovement : MonoBehaviour
     void Update()
     {
         // take inputs for later use on the rigidbody
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        if(GameManager.instance.currentState != GameManager.GameState.Play)
+        {
+            horizontal = 0f;
+            vertical = 0f;
+        }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
         // convert those inputs into a direction to move the player relative to the camera
@@ -72,6 +82,8 @@ public class playermovement : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             moveRot = new Vector3(0f, angle, 0f);
+
+
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             if (moveDir.magnitude > 1f)
@@ -98,6 +110,12 @@ public class playermovement : MonoBehaviour
             jumpHeld = false;
         }
 
+        if(GameManager.instance.currentState != GameManager.GameState.Play)
+        {
+            jumpInput = false;
+            jumpHeld = false;
+        }
+
         //Temporary Things- set water/lava levels with numbers
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -120,7 +138,16 @@ public class playermovement : MonoBehaviour
     // method to check if the player is currently grounded via a sphereCast at the players feet
     private bool isGrounded()
     {
-        return Physics.SphereCast(transform.position + new Vector3(0, col.radius / 3f), col.radius / 3f - 0.03f, Vector3.down, out var hit, groundCheckDistance, groundMask, QueryTriggerInteraction.Ignore);
+        bool returnVal = Physics.SphereCast(transform.position + new Vector3(0, col.radius / 3f), col.radius / 3f - 0.03f, Vector3.down, out var hit, groundCheckDistance, groundMask, QueryTriggerInteraction.Ignore);
+        if( returnVal && hit.collider.material.dynamicFriction == iceMaterial.dynamicFriction && hit.collider.material.dynamicFriction == iceMaterial.dynamicFriction)
+        {
+            isOnIce = true;
+        }
+        else
+        {
+            isOnIce = false;
+        }
+        return returnVal;
     }
 
     // funtion that returns the unedited gravity force, which can be large or small (smaller gravity is used when still jumping upwards in order to feel more responsive)
@@ -184,7 +211,7 @@ public class playermovement : MonoBehaviour
             Vector3 currentHorizontalVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
             // deccelerate in all directions (adding a bit of friction/responsiveness here)
-            if (true)//moveDir.magnitude < 0.1f)
+            if (!isOnIce)//moveDir.magnitude < 0.1f)
             {
                 
                 if (currentHorizontalVelocity.magnitude > 1)
@@ -197,6 +224,21 @@ public class playermovement : MonoBehaviour
                 {
                     // if you're not moving fast, deccellerate exponentially (nice for responsiveness)
                     moveVelocity += -currentHorizontalVelocity * deccelerationConstant;
+                }
+            }
+            else
+            {
+                // ice physics version of the above
+                if (currentHorizontalVelocity.magnitude > 1)
+                {
+                    // Cap deceleration in cases where velocity is really high (don't want to stop on a dime when moving really fast)
+                    // this will create a linear deceleration when moving fast (>1 m/s)
+                    moveVelocity += -currentHorizontalVelocity.normalized * deccelerationConstantOnIce;
+                }
+                else
+                {
+                    // if you're not moving fast, deccellerate exponentially (nice for responsiveness)
+                    moveVelocity += -currentHorizontalVelocity * deccelerationConstantOnIce;
                 }
             }
 
@@ -245,7 +287,7 @@ public class playermovement : MonoBehaviour
                 smallGravity = false;
             }
         }
-        
+        isGrounded();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -10,6 +10,9 @@ TagManager:
   - Coals
   - Grate
   - Ladder
+  - Pot
+  - DialogueTrigger
+  - Ice
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - 
   - Player
   - Fire
-  - 
-  - 
+  - Projectiles
+  - Player Projectiles
   - 
   - 
   - 

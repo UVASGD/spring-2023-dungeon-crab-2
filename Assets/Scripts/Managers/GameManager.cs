@@ -45,11 +45,14 @@ public class GameManager : MonoBehaviour
     // list of the ids all of the burned things that need to stay burned between scenes (mostly door boards)
     public HashSet<string> burnedThings = new HashSet<string>();
 
-    //Lists the ids of all the key objects that a player has collected already that need to stay collected
+    // Lists the ids of all the key objects that a player has collected already that need to stay collected
     public HashSet<string> keysCollected = new HashSet<string>();
 
-    //Lists the ids of all unlocked doors that need to stay unlocked
+    // Lists the ids of all unlocked doors that need to stay unlocked
     public HashSet<string> doorsUnlocked = new HashSet<string>();
+
+    // Player Health
+    public int playerHealth = 10;
 
     //private things used in this script
     private AudioManager am = null;

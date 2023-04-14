@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea66d3ba3c5ac7d498707e8c9e54524f, type: 2}
+  - {fileID: 2100000, guid: b7f811c166954a841a6b74bfb20b5f03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,8 +105,8 @@ MonoBehaviour:
   intersectionEffectsExpanded: 0
   planarReflectionsExpanded: 0
   causticsExpanded: 0
-  reflectionStrength: 0
-  reflectionFresnel: 0
+  reflectionStrength: 0.82
+  reflectionFresnel: 2.5
   causticsStrength: 2.09
   causticsTexture: {fileID: 2800000, guid: f2c40b951cee11943a1f6d5ec1b42f2c, type: 3}
   causticsSplit: 0.318
@@ -163,8 +163,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 1, g: 0.18257262, b: 0, a: 0.93333334}
-  deepColor: {r: 0.9150943, g: 0.07743268, b: 0.013812799, a: 0.85882354}
+  shallowColor: {r: 0.043486193, g: 0.3001276, b: 0.49056596, a: 0.89411765}
+  deepColor: {r: 0.030828916, g: 0.02604129, b: 0.17922503, a: 0.85882354}
   colorDepth: 1.77
   horizonColor: {r: 0, g: 0, b: 0, a: 1}
   horizonDistance: 20
@@ -174,7 +174,7 @@ MonoBehaviour:
   shoreBlend: 0
   shoreDepth: 0
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.2038979, g: 0.3097789, b: 0.517647, a: 0}
+  underwaterColor: {r: 0.20390105, g: 0.30978224, b: 0.517647, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -182,18 +182,18 @@ MonoBehaviour:
   surfaceFoamCutoff: 0.867
   surfaceFoamDistortion: 1.39
   surfaceFoamBlend: 0.64
-  surfaceFoamColor1: {r: 1, g: 0.3526923, b: 0.015686274, a: 0.7921569}
-  surfaceFoamColor2: {r: 1, g: 0.8117647, b: 0, a: 0.7372549}
+  surfaceFoamColor1: {r: 0, g: 0.011256009, b: 0.084876634, a: 0.7921569}
+  surfaceFoamColor2: {r: 0.20390129, g: 0.30978253, b: 0.517647, a: 0.7372549}
   surfaceFoamMovement: {x: 0.742, y: 0.017, z: 0.346, w: 0.003}
   surfaceFoamDirection1: 0.742
   surfaceFoamDirection2: 0.346
   surfaceFoamSpeed1: 0.017
   surfaceFoamSpeed2: 0.003
-  surfaceFoamTilingAndOffset: {x: 0.399, y: 0.617, z: 0.237, w: 0.128}
+  surfaceFoamTilingAndOffset: {x: 0.399, y: 0.617, z: 0.15, w: 0.07}
   surfaceFoamOffsetX: 0.399
   surfaceFoamOffsetY: 0.617
-  surfaceFoamScale1: 0.237
-  surfaceFoamScale2: 0.128
+  surfaceFoamScale1: 0.15
+  surfaceFoamScale2: 0.07
   enableSurfaceFoam: 1
   surfaceFoamHeightMask: 0
   surfaceFoamHeightMaskSmoothness: 0
@@ -203,19 +203,19 @@ MonoBehaviour:
   surfaceFoamShadowProjection: 15
   intersectionFoamShadowProjection: 4.6
   foamMovement: 0
-  intersectionFoamDepth: 0.36
+  intersectionFoamDepth: 0.72
   intersectionFoamTexture: {fileID: 2800000, guid: 772031b03d9d46e4ab03e15c8e17718c, type: 3}
-  intersectionFoamColor: {r: 0, g: 0, b: 0, a: 1}
+  intersectionFoamColor: {r: 0.4197008, g: 0.5952033, b: 0.8490566, a: 1}
   intersectionFoamMovement: {x: 0, y: 0}
-  intersectionFoamDirection: 0.035
-  intersectionFoamSpeed: 0.057
-  intersectionFoamScale: 0.136
+  intersectionFoamDirection: 0
+  intersectionFoamSpeed: 0
+  intersectionFoamScale: 0.19
   intersectionFoamSampling: {x: 1, y: 0}
   intersectionFoamCutoff: 1
-  intersectionFoamDistortion: 1.12
+  intersectionFoamDistortion: 0
   enableIntersectionEffects: 1
-  intersectionFoamBlend: 0.385
-  intersectionWaterBlend: 0.121
+  intersectionFoamBlend: 1
+  intersectionWaterBlend: 0
   shoreFoamSpeed: 0
   shoreFoamWidth: 0
   shoreFoamFrequency: 0
@@ -232,15 +232,15 @@ MonoBehaviour:
   normalsScale: 1.461
   normalsSpeed: 0.04
   refractionStrength: 0.004
-  waveVisuals: {x: 0.1, y: 1, z: 0.17}
-  waveSteepness: 0.1
-  waveLength: 1
+  waveVisuals: {x: 0.028, y: 0.6, z: 0.17}
+  waveSteepness: 0.028
+  waveLength: 0.6
   waveSpeed: 0.17
-  waveDirections: {x: 0.048, y: 0.64, z: 1, w: 0.33}
+  waveDirections: {x: 0.048, y: 0.489, z: 0.652, w: 0.288}
   waveDirection1: 0.048
-  waveDirection2: 0.64
-  waveDirection3: 1
-  waveDirection4: 0.33
+  waveDirection2: 0.489
+  waveDirection3: 0.652
+  waveDirection4: 0.288
   waterUVs: 1
   hideComponents: 0
   enableFoamShadows: 1

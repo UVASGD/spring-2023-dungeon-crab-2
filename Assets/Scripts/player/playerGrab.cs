@@ -16,10 +16,13 @@ public class playerGrab : MonoBehaviour
 
     private ice grabbedIce = null;
 
+    private WaterGunControl watergunLogic;
+
     // Start is called before the first frame update
     void Start()
     {
         movementScript = GetComponent<playermovement>();
+        watergunLogic = GetComponent<WaterGunControl>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class playerGrab : MonoBehaviour
                         {
                             grabbedIce.pGrab = this;
                         }
+                        watergunLogic.setCanShoot(false);
                     }
                 }
             }
@@ -73,6 +77,7 @@ public class playerGrab : MonoBehaviour
         {
             itemCollider.material = null;
         }
+        watergunLogic.setCanShoot(true);
     }
 
     // draws gizmos when the player object is highlighted in the editor (useful for debugging! Won't do anything in the final release/build.)
@@ -95,6 +100,7 @@ public class playerGrab : MonoBehaviour
         {
             itemCollider.material = null;
         }
+        watergunLogic.setCanShoot(true);
     }
     
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaterFill : MonoBehaviour
 {
+    public List<ActivatableObject> thingsToActivate;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class WaterFill : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         float full = FillZone.transform.position.y + 0.37f;
-        float low = FillZone.transform.position.y -0.35f;
+        float low = FillZone.transform.position.y - 0.35f;
 
         if (other.tag == "Water")
         {
@@ -33,6 +34,13 @@ public class WaterFill : MonoBehaviour
             if (water.transform.position.y < full)
             {
                 water.transform.position += fillSpeed;
+                if(water.transform.position.y >= full)
+                {
+                    foreach (ActivatableObject obj in thingsToActivate)
+                    {
+                        obj.isCurrentlyActive = true;
+                    }
+                }
             }
 
             //size appropriately as filling

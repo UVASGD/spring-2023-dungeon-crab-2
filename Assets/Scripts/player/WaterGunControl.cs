@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WaterGunControl : MonoBehaviour
 {
-    public GameObject WaterGun;
+    public GameObject WaterGunProjectile;
+    public GameObject FlamethrowerProjectile;
     public GameObject WaterGunModel;
     public float coolDownTime = 1;
     public float spawnDistance = 0.2f;
@@ -17,12 +18,14 @@ public class WaterGunControl : MonoBehaviour
     private bool keyDown = false;
     private bool leftKeyDown = false;
 
+    private bool canShoot = true;
+
     // Start is called before the first frame update
     void Start()
     {
         thisPlayerController = GetComponent<CharacterController>();
         gm = GameManager.instance;
-        if (!gm.waterGunUnlocked)
+        if (!gm.waterGunUnlocked && !gm.flamethrowerUnlocked)
         {
             WaterGunModel.SetActive(false);
         }
@@ -31,7 +34,7 @@ public class WaterGunControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (gm.waterGunUnlocked)
+        if (canShoot && (gm.waterGunUnlocked || gm.flamethrowerUnlocked))
         {
             if (Input.GetKey(KeyCode.RightShift))
             {
@@ -50,10 +53,10 @@ public class WaterGunControl : MonoBehaviour
                 leftKeyDown = false;
             }
 
-            if ((keyDown || leftKeyDown) && coolDown <= 0f && gm.waterGunAmmo > 0)
+            if ((leftKeyDown) && coolDown <= 0f && gm.waterGunAmmo > 0 && gm.waterGunUnlocked)
             {
                 // shoot out water
-                GameObject water = (GameObject)Instantiate(WaterGun, transform.position + transform.forward * spawnDistance + new Vector3(0, 0.05f, 0f), transform.rotation);
+                GameObject water = (GameObject)Instantiate(WaterGunProjectile, transform.position + transform.forward * spawnDistance + new Vector3(0, 0.2f, 0f), transform.rotation);
                 Rigidbody rb;
                 if ((rb = water.GetComponent<Rigidbody>()) != null)
                 {
@@ -62,14 +65,17 @@ public class WaterGunControl : MonoBehaviour
                 coolDown = coolDownTime;
                 gm.waterGunAmmo--;
 
-                /*
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                nextSpark.SendMessage("setupDir", nextDirection);
-                nextSpark.SendMessage("setupSpark", spark);
-                nextSpark.SendMessage("setupIntense", 150);
-                nextSpark.SendMessage("setJoint");*/
-
+            }else if(keyDown && coolDown <= 0f && gm.flamethrowerAmmo > 0 && gm.flamethrowerUnlocked)
+            {
+                // shoot out fire
+                GameObject fire = (GameObject)Instantiate(FlamethrowerProjectile, transform.position + transform.forward * spawnDistance + new Vector3(0, 0.2f, 0f), transform.rotation);
+                Rigidbody rb;
+                if ((rb = fire.GetComponent<Rigidbody>()) != null)
+                {
+                    rb.velocity = (new Vector3(Random.Range(transform.forward.x + spread, transform.forward.x - spread), Random.Range(transform.forward.y + spread, transform.forward.y - spread), Random.Range(transform.forward.z + spread, transform.forward.z - spread)).normalized + new Vector3(0, 0.3f, 0)) * spawnSpeed * Random.Range(0.9f, 1.1f);
+                }
+                coolDown = coolDownTime;
+                gm.flamethrowerAmmo--;
             }
 
             if (coolDown > 0f)
@@ -87,11 +93,38 @@ public class WaterGunControl : MonoBehaviour
         WaterGunModel.SetActive(true);
     }
 
+    // call this to make the water gun work
+    public void getFlamethrower()
+    {
+        gm.flamethrowerUnlocked = true;
+        WaterGunModel.SetActive(true);
+    }
+
+    // set whether the player can shoot either projectile at al; this is set to false when grabbing something
+    public void setCanShoot(bool shouldBeAbleToShoot)
+    {
+        canShoot = shouldBeAbleToShoot;
+        if(canShoot && (gm.flamethrowerUnlocked || gm.waterGunUnlocked))
+        {
+            WaterGunModel.SetActive(true);
+        }
+        else
+        {
+            WaterGunModel.SetActive(false);
+        }
+    }
+
+    // When the player touches fire or water it fills the respective ammo type for the player.
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Water")
+        // (layer 11 is for player-made projectiles- we don't want shot out projectiles to refill ammo)
+        if (other.tag == "Water" && other.gameObject.layer != 11)
         {
             GameManager.instance.waterGunAmmo = 50;
+        }
+        else if (other.tag == "Fire" && other.gameObject.layer != 11)
+        {
+            GameManager.instance.flamethrowerAmmo = 50;
         }
     }
 }

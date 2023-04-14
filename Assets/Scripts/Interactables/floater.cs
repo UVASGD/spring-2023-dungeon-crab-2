@@ -44,7 +44,7 @@ public class floater : MonoBehaviour
     // function to determine if 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == floatInTag)
+        if (other.gameObject.tag == floatInTag && other.gameObject.layer != 10 && other.gameObject.layer != 11) // note: layer 10 is for projectiles, don't float in those
         {
             // if more than a quarter of the box is in water, then dramatically increase drag and angular drag
             if (col.bounds.center.y - col.bounds.extents.y / 2f < other.bounds.max.y)

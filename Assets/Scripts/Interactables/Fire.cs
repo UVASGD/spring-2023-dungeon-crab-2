@@ -75,15 +75,22 @@ public class Fire : MonoBehaviour
         if (other.CompareTag("Fire") && !isFireActive && !waterlogged)
         {
             Fire otherFire = other.GetComponent<Fire>();
-            if (otherFire != null && otherFire.isFireActive)
-            {
-                ReLight();
-            }
             playerFire otherFire2 = other.GetComponent<playerFire>();
-            if (otherFire2 != null && otherFire2.isFireActive)
+            if (otherFire != null)
             {
-                ReLight();
+                if(otherFire.isFireActive)
+                    ReLight();
             }
+            else if (otherFire2 != null)
+            {
+                if(otherFire2.isFireActive)
+                    ReLight();
+            }
+            else
+            {
+                ReLight(); // should only trigger on fire projectile (which is always lit/active)
+            }
+
         }
         if (other.CompareTag("Lava") && !isFireActive)
         {

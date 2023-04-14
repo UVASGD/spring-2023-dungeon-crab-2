@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     // stores info about whether the player has unlocked the water gun, their current ammo
     public bool waterGunUnlocked = false;
     public int waterGunAmmo = 50;
+    public bool flamethrowerUnlocked = false;
+    public int flamethrowerAmmo = 50;
 
     // list of the ids all of the burned things that need to stay burned between scenes (mostly door boards)
     public HashSet<string> burnedThings = new HashSet<string>();

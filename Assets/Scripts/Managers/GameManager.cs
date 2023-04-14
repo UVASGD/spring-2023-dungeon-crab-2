@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     //information that's stored between scenes on number of keys the player currently has, water/lava levels
     public int numberOfKeys = 0;
+    public int numberofMoney = 0;
     public int waterLevel = 0;
     public int lavaLevel = 0;
 
@@ -50,6 +51,9 @@ public class GameManager : MonoBehaviour
 
     // Lists the ids of all unlocked doors that need to stay unlocked
     public HashSet<string> doorsUnlocked = new HashSet<string>();
+
+    //Lists the ids of all the money objects that a player has collected already that need to stay collected
+    public HashSet<string> moneyCollected = new HashSet<string>();
 
     // Player Health
     public int playerHealth = 10;
@@ -111,11 +115,25 @@ public class GameManager : MonoBehaviour
         return numberOfKeys;
     }
 
+    //returns the number of money the player currently has.
+    public int getMoney()
+    {
+        return numberofMoney;
+    }
+
     //add a key to the players inventory.
     public void keyObtained()
     {
         numberOfKeys++;
     }
+
+    //add a money to the players inventory.
+    public void moneyObtained()
+    {
+        numberofMoney++;
+        Debug.Log(numberofMoney);
+    }
+
     //set the water level to a given int value. Water objects will look for the water level to determine if they need to raise/lower.
     public bool setWaterLevel(int level)
     {

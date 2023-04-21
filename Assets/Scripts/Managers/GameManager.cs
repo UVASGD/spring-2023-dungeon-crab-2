@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     public HashSet<string> moneyCollected = new HashSet<string>();
 
     // Player Health
-    public int playerHealth = 10;
+    public float playerHealth = 5f;
 
     //private things used in this script
     private AudioManager am = null;
@@ -205,14 +205,14 @@ public class GameManager : MonoBehaviour
     IEnumerator LoadLevelFromName(string sceneName, bool resetLiquids = false)
     {
         yield return new WaitForSeconds(transitionTime);
-
+        
         // to be called when restarting only: set water/lava back to what they were when the scene began
         if (resetLiquids)
         {
             waterLevel = lastWaterLevel;
             lavaLevel = lastLavaLevel;
         }
-
+        this.playerHealth = 5f;
         SceneManager.LoadScene(sceneName);
         restarting = false;
     }

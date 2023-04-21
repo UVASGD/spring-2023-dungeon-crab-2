@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private int maxHealth = 5;
-    public float graceTime = 1.0f;
-    public float regenTime = 2.0f;
+    private float maxHealth = 5f;
+    public float graceTime = 0.1f;  // determines how much invincibility time you get after taking an attack
+    public float timeBeforeRegen = 2f; // defines how long you have to be not damaged before you start regening
+    public float regenTime = 0.01f; // determines how frequently you get regen'd
+    public GameObject playerGraphics;
 
-    private float flashTime = 0.2f;
+    public float flashRate = 10f;
 
     private float timeOfLastDamage;
 
@@ -17,22 +19,37 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeOfLastDamage = Time.time;
-        timeOfLastDamage = Time.time;
+        timeOfLastDamage = Time.time - graceTime;
         GameManager.instance.playerHealth = maxHealth;
     }
 
     // Slowly regen after not taking damage for a while
     void Update()
     {
-        if(Time.time > timeOfLastRegen + regenTime)
+        if(Time.time > timeOfLastRegen + regenTime && Time.time > timeOfLastDamage + timeBeforeRegen)
         {
-            Heal(1);
+            Heal(0.01f);
             timeOfLastRegen = Time.time;
+        }
+        if(Time.time < timeOfLastDamage + graceTime)
+        {
+            if(Mathf.Sin(Time.time * flashRate * Mathf.PI) > 0)
+            {
+                playerGraphics.SetActive(false);
+            }
+            else
+            {
+                playerGraphics.SetActive(true);
+            }
+            
+        }
+        else
+        {
+            playerGraphics.SetActive(true);
         }
         
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         
         if(Time.time > timeOfLastDamage + graceTime)
@@ -43,12 +60,13 @@ public class PlayerHealth : MonoBehaviour
             if (GameManager.instance.playerHealth <= 0)
             {
                 GameManager.instance.RestartScene();
+                gameObject.SetActive(false);
             }
         }
         
     }
 
-    public void Heal(int damage)
+    public void Heal(float damage)
     {
         if(GameManager.instance.playerHealth + damage > maxHealth)
         {
@@ -70,17 +88,17 @@ public class PlayerHealth : MonoBehaviour
             if (otherFire != null)
             {
                 if (otherFire.isFireActive)
-                    TakeDamage(1);
+                    TakeDamage(0.04f);
             }
             else if (otherFire2 != null)
             {
                 if (otherFire2.isFireActive)
-                    TakeDamage(1);
+                    TakeDamage(0.04f);
             }
             else
             {
                 // this should only trigger for fire projectiles
-                TakeDamage(1);
+                TakeDamage(0.04f);
             }
 
         }

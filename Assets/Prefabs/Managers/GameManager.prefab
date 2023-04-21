@@ -47,14 +47,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   numberOfKeys: 0
+  numberofMoney: 0
   waterLevel: 0
   lavaLevel: 0
-  transitionTime: 0.4
+  transitionTime: 0.49
   lastSceneName: 
   lastWaterLevel: 0
   lastLavaLevel: 0
   waterGunUnlocked: 0
   waterGunAmmo: 50
+  flamethrowerUnlocked: 0
+  flamethrowerAmmo: 50
+  playerHealth: 10
   dm: {fileID: 4094011682824728801}
 --- !u!1001 &1492397666
 PrefabInstance:

@@ -183,8 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8471dba95e4abb945bfe52fda6e0b262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graceTime: 2
-  regenTime: 2
+  graceTime: 0.005
+  timeBeforeRegen: 2
+  regenTime: 0.003
+  playerGraphics: {fileID: 4901219664489722913}
+  flashRate: 0
 --- !u!1001 &108856184
 PrefabInstance:
   m_ObjectHideFlags: 0

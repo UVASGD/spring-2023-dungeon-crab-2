@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2803652465374576048}
   - component: {fileID: 2803652465374576049}
-  - component: {fileID: 1549056627953781842}
   m_Layer: 0
   m_Name: Nature - Grass Patch Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2803652465374576048
 Transform:
@@ -28,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7165349938858807369}
   - {fileID: 7165349938398322185}
@@ -48,28 +48,15 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.04754927
+  - screenRelativeHeight: 0.021775866
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7165349938858807374}
-  - screenRelativeHeight: 0.008224679
+  - screenRelativeHeight: 0.0060427305
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7165349938398322190}
   m_Enabled: 1
---- !u!135 &1549056627953781842
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2803652465374576050}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &7165349938398322189
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +73,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7165349938398322185
 Transform:
@@ -98,6 +85,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2803652465374576048}
   m_RootOrder: 1
@@ -168,7 +156,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7165349938858807369
 Transform:
@@ -180,6 +168,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2803652465374576048}
   m_RootOrder: 0

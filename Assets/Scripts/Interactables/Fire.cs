@@ -17,8 +17,6 @@ public class Fire : MonoBehaviour
     private int loopsToDestroy;
     private bool destroyed = false;
 
-    private bool waterlogged;
-
     private bool isSmokeActive;
 
     private int loopsBeforeFireStartsOnCoals = 100;
@@ -44,20 +42,8 @@ public class Fire : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            waterlogged = true;
-        }
-    }
-
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Water"))
-        {
-            waterlogged = false;
-        }
         if (other.CompareTag("Coals"))
         {
             onCoals = false;
@@ -66,13 +52,11 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
         if(other.CompareTag("Water") && isFireActive)
         {
-            waterlogged = true;
             Extinguish();
         }
-        if (other.CompareTag("Fire") && !isFireActive && !waterlogged)
+        if (other.CompareTag("Fire") && !isFireActive)
         {
             Fire otherFire = other.GetComponent<Fire>();
             playerFire otherFire2 = other.GetComponent<playerFire>();
@@ -98,7 +82,7 @@ public class Fire : MonoBehaviour
         }
         if (other.CompareTag("Coals"))
         {
-            if(!isFireActive && !waterlogged)
+            if(!isFireActive)
             {
                 onCoals = true;
             }

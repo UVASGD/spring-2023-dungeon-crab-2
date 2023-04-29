@@ -14,10 +14,15 @@ public class playerGrab : MonoBehaviour
     public PhysicMaterial materialToApplyToHeldThings;
     public Vector3 grabPositionChange;
 
+    private ice grabbedIce = null;
+
+    private WaterGunControl watergunLogic;
+
     // Start is called before the first frame update
     void Start()
     {
         movementScript = GetComponent<playermovement>();
+        watergunLogic = GetComponent<WaterGunControl>();
     }
 
     // Update is called once per frame
@@ -35,26 +40,27 @@ public class playerGrab : MonoBehaviour
                         joint = gameObject.AddComponent<FixedJoint>() as FixedJoint;
                         joint.connectedBody = hit.rigidbody;
                         joint.breakForce = breakGrabForce;
-                        if (hit.collider && materialToApplyToHeldThings)
+                        if (hit.collider && materialToApplyToHeldThings && materialToApplyToHeldThings.dynamicFriction < hit.collider.material.dynamicFriction)
                         {
                             hit.collider.material = materialToApplyToHeldThings;
                             itemCollider = hit.collider;
                         }
                         // while carrying something, don't turn in the direction you move (would cause a lot of physics problems/forces, plus is a lot less predicatable)
                         movementScript.turnInDirectionOfMovement = false;
+                        grabbedIce = hit.collider.gameObject.GetComponent<ice>();
+                        if(grabbedIce != null)
+                        {
+                            grabbedIce.pGrab = this;
+                        }
+                        watergunLogic.setCanShoot(false);
                     }
                 }
             }
             else
             {
-                Destroy(joint);
-                movementScript.turnInDirectionOfMovement = true;
-                if (itemCollider)
-                {
-                    itemCollider.material = null;
-                }
+                breakJoint();
             }
-            
+
         }
     }
 
@@ -62,11 +68,16 @@ public class playerGrab : MonoBehaviour
     private void OnJointBreak(float breakForce)
     {
         joint = null;
+        if (grabbedIce)
+        {
+            grabbedIce = null;
+        }
         movementScript.turnInDirectionOfMovement = true;
         if (itemCollider)
         {
             itemCollider.material = null;
         }
+        watergunLogic.setCanShoot(true);
     }
 
     // draws gizmos when the player object is highlighted in the editor (useful for debugging! Won't do anything in the final release/build.)
@@ -75,4 +86,21 @@ public class playerGrab : MonoBehaviour
         //draws a vector that's the same as the ray cast for grabbing something (shows the range)
         //Gizmos.DrawLine(transform.position, transform.position + transform.forward * grabRange);
     }
+    public void breakJoint()
+    {
+        Destroy(joint);
+        joint = null;
+        if (grabbedIce)
+        {
+            grabbedIce.pGrab = null;
+        }
+        grabbedIce = null;
+        movementScript.turnInDirectionOfMovement = true;
+        if (itemCollider && itemCollider.material == materialToApplyToHeldThings)
+        {
+            itemCollider.material = null;
+        }
+        watergunLogic.setCanShoot(true);
+    }
+    
 }

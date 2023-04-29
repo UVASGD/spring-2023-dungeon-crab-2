@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,9 +50,12 @@ MonoBehaviour:
   particleScale: {x: 1, y: 1, z: 1}
   particleScaleVariance: 0.2
   numParticles: 50
+  carrierSampling: 0
   offsetAlongNormal: 0
-  oneNormalPerParticle: 0
+  offsetAlongNormalFraction: 1
   particleRotationRange: 15
+  geometryBasedNormals: 0
+  oneNormalPerParticle: 0
   particleRotationBias: 0
   biasTowardRotation: {x: 0, y: 0, z: 0}
   noiseEnabled: 1
@@ -61,10 +65,9 @@ MonoBehaviour:
   noiseScale: {x: 1, y: 1, z: 1}
   noiseSeed: 1
   folderPath: 
-  fileNamePrefix: Foliage
+  fileNamePrefix: Foliage1
   appendMeshName: 1
   appendTakeNumber: 1
   takeNumber: 1
   appendTimestamp: 0
   exportOnEdit: 0
-  exportDebugMesh: 0

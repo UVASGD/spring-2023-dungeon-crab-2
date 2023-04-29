@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     //information that's stored between scenes on number of keys the player currently has, water/lava levels
     public int numberOfKeys = 0;
+    public int numberofMoney = 0;
     public int waterLevel = 0;
     public int lavaLevel = 0;
 
@@ -39,15 +40,23 @@ public class GameManager : MonoBehaviour
     // stores info about whether the player has unlocked the water gun, their current ammo
     public bool waterGunUnlocked = false;
     public int waterGunAmmo = 50;
+    public bool flamethrowerUnlocked = false;
+    public int flamethrowerAmmo = 50;
 
     // list of the ids all of the burned things that need to stay burned between scenes (mostly door boards)
     public HashSet<string> burnedThings = new HashSet<string>();
 
-    //Lists the ids of all the key objects that a player has collected already that need to stay collected
+    // Lists the ids of all the key objects that a player has collected already that need to stay collected
     public HashSet<string> keysCollected = new HashSet<string>();
 
-    //Lists the ids of all unlocked doors that need to stay unlocked
+    // Lists the ids of all unlocked doors that need to stay unlocked
     public HashSet<string> doorsUnlocked = new HashSet<string>();
+
+    //Lists the ids of all the money objects that a player has collected already that need to stay collected
+    public HashSet<string> moneyCollected = new HashSet<string>();
+
+    // Player Health
+    public float playerHealth = 5f;
 
     //private things used in this script
     private AudioManager am = null;
@@ -106,11 +115,24 @@ public class GameManager : MonoBehaviour
         return numberOfKeys;
     }
 
+    //returns the number of money the player currently has.
+    public int getMoney()
+    {
+        return numberofMoney;
+    }
+
     //add a key to the players inventory.
     public void keyObtained()
     {
         numberOfKeys++;
     }
+
+    //add a money to the players inventory.
+    public void moneyObtained()
+    {
+        numberofMoney++;
+    }
+
     //set the water level to a given int value. Water objects will look for the water level to determine if they need to raise/lower.
     public bool setWaterLevel(int level)
     {
@@ -182,14 +204,14 @@ public class GameManager : MonoBehaviour
     IEnumerator LoadLevelFromName(string sceneName, bool resetLiquids = false)
     {
         yield return new WaitForSeconds(transitionTime);
-
+        
         // to be called when restarting only: set water/lava back to what they were when the scene began
         if (resetLiquids)
         {
             waterLevel = lastWaterLevel;
             lavaLevel = lastLavaLevel;
         }
-
+        this.playerHealth = 5f;
         SceneManager.LoadScene(sceneName);
         restarting = false;
     }

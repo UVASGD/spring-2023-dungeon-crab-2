@@ -17,8 +17,6 @@ public class Fire : MonoBehaviour
     private int loopsToDestroy;
     private bool destroyed = false;
 
-    private bool waterlogged;
-
     private bool isSmokeActive;
 
     private int loopsBeforeFireStartsOnCoals = 100;
@@ -44,20 +42,8 @@ public class Fire : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            waterlogged = true;
-        }
-    }
-
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Water"))
-        {
-            waterlogged = false;
-        }
         if (other.CompareTag("Coals"))
         {
             onCoals = false;
@@ -66,24 +52,29 @@ public class Fire : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
         if(other.CompareTag("Water") && isFireActive)
         {
-            waterlogged = true;
             Extinguish();
         }
-        if (other.CompareTag("Fire") && !isFireActive && !waterlogged)
+        if (other.CompareTag("Fire") && !isFireActive)
         {
             Fire otherFire = other.GetComponent<Fire>();
-            if (otherFire != null && otherFire.isFireActive)
-            {
-                ReLight();
-            }
             playerFire otherFire2 = other.GetComponent<playerFire>();
-            if (otherFire2 != null && otherFire2.isFireActive)
+            if (otherFire != null)
             {
-                ReLight();
+                if(otherFire.isFireActive)
+                    ReLight();
             }
+            else if (otherFire2 != null)
+            {
+                if(otherFire2.isFireActive)
+                    ReLight();
+            }
+            else
+            {
+                ReLight(); // should only trigger on fire projectile (which is always lit/active)
+            }
+
         }
         if (other.CompareTag("Lava") && !isFireActive)
         {
@@ -91,7 +82,7 @@ public class Fire : MonoBehaviour
         }
         if (other.CompareTag("Coals"))
         {
-            if(!isFireActive && !waterlogged)
+            if(!isFireActive)
             {
                 onCoals = true;
             }

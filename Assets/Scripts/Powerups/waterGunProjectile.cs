@@ -5,8 +5,8 @@ using UnityEngine;
 public class waterGunProjectile : MonoBehaviour
 {
     bool destroy = false;
-    float timeToDestroy = 0.15f;
-    float pushPower = 0.8f;
+    float timeToDestroy = 0.05f;
+    float pushPower = 20f;
     Rigidbody rb;
     public ParticleSystem smoke = null;
     // Start is called before the first frame update
@@ -39,14 +39,18 @@ public class waterGunProjectile : MonoBehaviour
             destroy = true;
 
             // push anything with a rigidbody
-            Rigidbody body;
-            if ((body = other.GetComponent<Rigidbody>()) != null)
+            if(other.tag != "Pot")
             {
-                if (body.isKinematic)
-                    return;
-                Vector3 pushDir = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-                body.velocity = pushDir * pushPower;
+                Rigidbody body;
+                if ((body = other.GetComponent<Rigidbody>()) != null)
+                {
+                    if (body.isKinematic)
+                        return;
+                    Vector3 pushDir = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
+                    body.AddForce(pushDir * pushPower);
+                }
             }
+            
             
             if(other.tag=="Lava" && smoke != null)
             {

@@ -6,8 +6,8 @@ public class mainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        GameManager.instance.loadLevel("FirstScene");
-        AudioManager.instance.switchTheme();
+        GameManager.instance.loadLevel("IntroCutscene");
+        //AudioManager.instance.switchTheme();
     }
     public void QuitGame()
     {
@@ -16,7 +16,7 @@ public class mainMenu : MonoBehaviour
 
     public void BackButton()
     {
-        GameManager.instance.loadLevel("RealTitleScreen");
+        GameManager.instance.loadLevel("MainMenu");
     }
 
     public void Credits()

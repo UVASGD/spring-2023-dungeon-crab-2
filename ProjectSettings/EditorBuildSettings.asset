@@ -5,40 +5,46 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/RealTitleScreen.unity
     guid: d0ac67f13d6f2c142be5eb0a9d33bce9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/CreditsScreen.unity
     guid: b5df8e4d1f00a3d40a8844114ca03c4c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/FirstScene.unity
     guid: be214297da215444d8766613dba3af79
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/LavaScene.unity
     guid: 7020c7e3bef9b7b4babc57cb0d83ad71
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/CatherineRemixScene.unity
     guid: 0fef4ce32f8c6ec4e86fe0aa940b08da
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/WaterGunScene.unity
     guid: 1a3997867426cc646886b6e938a466ad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/ButtonIntroLevel.unity
     guid: be190c484ad984a10aab0058a21be492
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dungeon Crab 1 Final Scenes/FinalScene.unity
     guid: 945068dc74cf6ab47b4b8acd28f6120a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Demo2Scene2.unity
     guid: c45968acaf2e0e24cbfd40c45ee4e4aa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Demo2Scene1.unity
     guid: a4df822e851ca8e40b8a76428e654cd8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/Jimmy2.unity
     guid: 146f529e7268f644cad7b7dcf2ffc274
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/JimmyTesting1.unity
     guid: f22f4a1019efcc7459e9f7cadd51d54a
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/IntroCutscene.unity
+    guid: 513cf983ab2dbc74883e40641229defe
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Island.unity
+    guid: 1f2fbc53256694b4b80b79543f086f52
   m_configObjects: {}

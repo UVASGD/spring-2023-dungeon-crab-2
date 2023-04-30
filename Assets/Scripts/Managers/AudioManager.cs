@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
-        Play("Theme1");        //uncomment this to play Theme song once we have a theme song lol (must add the song to the prefab in the inspector to start)
+        //Play("Theme1");        //uncomment this to play Theme song once we have a theme song lol (must add the song to the prefab in the inspector to start)
     }
     private void Update()
     {
@@ -82,6 +82,16 @@ public class AudioManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.N))
         {
+        }
+    }
+
+    public void PlayTheme(string name)
+    {
+        Stop("Theme1");
+        Stop("Theme2");
+        if (!muted)
+        {
+            Play(name);
         }
     }
 

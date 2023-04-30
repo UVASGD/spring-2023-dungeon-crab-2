@@ -21,6 +21,6 @@ public class mainMenu : MonoBehaviour
 
     public void Credits()
     {
-        GameManager.instance.loadLevel("CreditsScreen");
+        GameManager.instance.loadLevel("CreditsScreen2");
     }
 }

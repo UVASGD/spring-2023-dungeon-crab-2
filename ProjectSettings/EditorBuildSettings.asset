@@ -42,9 +42,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing Scenes/JimmyTesting1.unity
     guid: f22f4a1019efcc7459e9f7cadd51d54a
   - enabled: 1
+    path: Assets/Scenes/Final Scenes/MainMenu.unity
+    guid: 0ebb6d16ad8e28d438cb78fd411751c8
+  - enabled: 1
     path: Assets/Scenes/Final Scenes/IntroCutscene.unity
     guid: 513cf983ab2dbc74883e40641229defe
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Island.unity
     guid: 1f2fbc53256694b4b80b79543f086f52
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/SunkenCisternEntrance.unity
+    guid: 07430fb16ae28934d8aaf92b5a3384a7
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/XGU WaterDungeon Right.unity
+    guid: b6addbde9f5a8784c8e2f5185b1e958f
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/IceLevel.unity
+    guid: 0b924db8683992a4ab4b46c06ede5f40
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/DariaTesting.unity
+    guid: 72ae46b6c769ca84cb2e4553843fc4ac
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/CreditsScreen2.unity
+    guid: a6a2dde502a39a04c89b0855a5d2dde9
   m_configObjects: {}

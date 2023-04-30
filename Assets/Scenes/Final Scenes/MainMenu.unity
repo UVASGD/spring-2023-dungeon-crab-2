@@ -11448,7 +11448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094011682824728728, guid: d98fb1927e2fb6d4fbb302578fa38f40, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6596271196905178742, guid: d98fb1927e2fb6d4fbb302578fa38f40, type: 3}
       propertyPath: lastSceneName
@@ -13569,7 +13569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099357382359782362, guid: 87d3a240aa1857b449a5f341a1cb3f0c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3099357382359782365, guid: 87d3a240aa1857b449a5f341a1cb3f0c, type: 3}
       propertyPath: m_Pivot.x

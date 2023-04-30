@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public int numberofMoney = 0;
     public int waterLevel = 0;
     public int lavaLevel = 0;
+    public int hatNum = 0;
+    public bool[] unlockedHats = { true, false, false, false, false, false };
 
     //time to transition between scenes
     public float transitionTime = 0.2f;

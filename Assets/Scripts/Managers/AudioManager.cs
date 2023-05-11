@@ -89,7 +89,8 @@ public class AudioManager : MonoBehaviour
     {
         Stop("Theme1");
         Stop("Theme2");
-        if (!muted)
+        Stop("Ocean");
+        if (!muted && name != "None")
         {
             Play(name);
         }

@@ -65,7 +65,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme2
     clip: {fileID: 8300000, guid: 6410a30afcdbf7047b73e0fcd82e3945, type: 3}
-    volume: 0.138
+    volume: 0.13
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -77,7 +77,31 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Pickup
     clip: {fileID: 8300000, guid: c195ddc0b518c474ba746412b31bf74c, type: 3}
-    volume: 0.5
+    volume: 0.16
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Thunk
+    clip: {fileID: 8300000, guid: b6350a069065f244cb4ca8f73517362a, type: 3}
+    volume: 0.06
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Thwack
+    clip: {fileID: 8300000, guid: ee09464e81358f348b6113499ba86b7e, type: 3}
+    volume: 0.06
+    pitch: 0.55
+    loop: 0
+    source: {fileID: 0}
+  - name: Thwink
+    clip: {fileID: 8300000, guid: f5f26138d62946044b4b5c8662389084, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ocean
+    clip: {fileID: 8300000, guid: 3fc110bfd6a6b7e45895bfa26e540e6b, type: 3}
+    volume: 0.14
     pitch: 1
     loop: 0
     source: {fileID: 0}

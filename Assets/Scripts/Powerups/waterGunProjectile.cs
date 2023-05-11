@@ -6,7 +6,7 @@ public class waterGunProjectile : MonoBehaviour
 {
     bool destroy = false;
     float timeToDestroy = 0.05f;
-    float pushPower = 20f;
+    float pushPower = 30f;
     Rigidbody rb;
     public ParticleSystem smoke = null;
     // Start is called before the first frame update

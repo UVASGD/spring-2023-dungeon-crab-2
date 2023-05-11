@@ -77,6 +77,10 @@ public class lever : MonoBehaviour
                     gm.setLavaLevel(1);
                 }
             }
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.Play("Moving Block");
+            }
         }
 
         //reset some values for the lerp if the water/lava level changed

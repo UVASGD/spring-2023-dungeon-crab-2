@@ -22,5 +22,10 @@ public class cutsceneTimer : MonoBehaviour
             GameManager.instance.loadLevel("Island");
             Destroy(this);
         }
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
+        {
+            GameManager.instance.loadLevel("Island");
+            Destroy(this);
+        }
     }
 }

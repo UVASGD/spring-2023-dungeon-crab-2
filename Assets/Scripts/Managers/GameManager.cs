@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
 
     public DialogManager dm;
 
+    public bool WaterDungeonDone = false;
+
     private void Awake()
     {
         // this is the code to ensure there's only one gameManager in a scene at a time

@@ -53,6 +53,10 @@ public class playerGrab : MonoBehaviour
                             grabbedIce.pGrab = this;
                         }
                         watergunLogic.setCanShoot(false);
+                        if(AudioManager.instance != null)
+                        {
+                            AudioManager.instance.Play("Thunk");
+                        }
                     }
                 }
             }
@@ -101,6 +105,10 @@ public class playerGrab : MonoBehaviour
             itemCollider.material = null;
         }
         watergunLogic.setCanShoot(true);
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.Play("Thwack");
+        }
     }
     
 }

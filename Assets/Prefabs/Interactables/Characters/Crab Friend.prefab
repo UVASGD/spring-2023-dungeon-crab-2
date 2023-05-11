@@ -1,0 +1,329 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6771741534443779354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6771741534443779332}
+  - component: {fileID: 6771741534443779333}
+  m_Layer: 2
+  m_Name: CM vcam2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6771741534443779332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741534443779354}
+  m_LocalRotation: {x: 0.21441521, y: -0.7181181, z: 0.25124714, w: 0.61254185}
+  m_LocalPosition: {x: 4.9759784, y: 3.7842014, z: 0.031838894}
+  m_LocalScale: {x: 0.3381799, y: 0.6207098, z: 0.9872198}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6771741535652152454}
+  m_Father: {fileID: 6771741535395413686}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 35.708, y: 185.306, z: -3.132}
+--- !u!114 &6771741534443779333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741534443779354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 15
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 40
+    OrthographicSize: 5
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    m_SensorSize: {x: 1, y: 1}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 6771741535652152454}
+--- !u!1 &6771741535395413685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6771741535395413686}
+  - component: {fileID: 6771741535395413687}
+  - component: {fileID: 6771741535395413684}
+  m_Layer: 0
+  m_Name: Crab Friend
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6771741535395413686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535395413685}
+  m_LocalRotation: {x: -0, y: -0.97015864, z: -0, w: -0.2424713}
+  m_LocalPosition: {x: 23.44, y: -0.060000002, z: -3.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6771741534443779332}
+  - {fileID: 1351121283904889025}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -208.065, z: 0}
+--- !u!114 &6771741535395413687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535395413685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bb95dbc41f31b4caf535c4ef6b4528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speaker: Crab2
+    line: Captain! Is that really you?
+  - speaker: Crab
+    line: It is! You have no idea how much of a releif it is to see that my first
+      mate is okay.
+  - speaker: Crab2
+    line: Yeah, I'm OK! I just got super lost in this dungeon.
+  - speaker: Crab2
+    line: Luckily, I think this door next to me leads back to the island.
+  - speaker: Crab
+    line: Alright, well if you're ok I'm gonna go looking for our second mate. Do
+      you know where he got off to?
+  - speaker: Crab2
+    line: I think he's in the other dungeon- if you get back to the island, then
+      it should be just across the big wooden bridge.
+  - speaker: Crab
+    line: Great! I'll head back to the island and find him. I'll meet you there after
+      I find him.
+  - speaker: Crab2
+    line: Sounds like a plan, good luck!
+  cameraAngle: {fileID: 6771741534443779354}
+--- !u!136 &6771741535395413684
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535395413685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5727619
+  m_Height: 1.6438136
+  m_Direction: 2
+  m_Center: {x: 0.0040751104, y: 0.43246716, z: 0.024745166}
+--- !u!1 &6771741535652152455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6771741535652152454}
+  - component: {fileID: 6771741535652152451}
+  - component: {fileID: 6771741535652152448}
+  - component: {fileID: 6771741535652152449}
+  m_Layer: 2
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6771741535652152454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535652152455}
+  m_LocalRotation: {x: -0.64384896, y: 0.01148818, z: -0.009645549, w: 0.76500565}
+  m_LocalPosition: {x: -25.50949, y: -2.1434307, z: 23.712214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6771741534443779332}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6771741535652152451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535652152455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6771741535652152448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535652152455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &6771741535652152449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771741535652152455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!1001 &1351121283904502343
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6771741535395413686}
+    m_Modifications:
+    - target: {fileID: 100006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_Name
+      value: Crab_LOD2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.479201
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6404042
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.479201
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.014277
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.079567
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00000010058
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 32bc9c7c03521564fb43905447a2b590, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+--- !u!4 &1351121283904889025 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: 2e32a7b300024014b9bd13526a7ed7a3, type: 3}
+  m_PrefabInstance: {fileID: 1351121283904502343}
+  m_PrefabAsset: {fileID: 0}

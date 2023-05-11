@@ -63,6 +63,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/DariaTesting.unity
     guid: 72ae46b6c769ca84cb2e4553843fc4ac
   - enabled: 1
+    path: Assets/Scenes/Final Scenes/EndScreen.unity
+    guid: 840c04ab4dce1ec468664f8dde72dd7b
+  - enabled: 1
     path: Assets/Scenes/Final Scenes/CreditsScreen2.unity
     guid: a6a2dde502a39a04c89b0855a5d2dde9
+  - enabled: 0
+    path: Assets/Scenes/Final Scenes/Shop Testing.unity
+    guid: 78d6ece8b8ddd214497667a94d0a8e5a
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/CreditsScreen.unity
+    guid: 5885d8466117cfc4e92816d50df1132a
   m_configObjects: {}

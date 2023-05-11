@@ -323,8 +323,8 @@ GameObject:
   - component: {fileID: 7621963707066248000}
   - component: {fileID: 47808215972889190}
   - component: {fileID: 3468796562863296362}
-  - component: {fileID: 9210078184642266492}
   - component: {fileID: 8058588292388088586}
+  - component: {fileID: 5072029063760684372}
   m_Layer: 0
   m_Name: pot5
   m_TagString: Pot
@@ -399,20 +399,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9210078184642266492
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8840248972049824429}
-  m_Material: {fileID: 13400000, guid: cfd2cab0e01766a4aba3df7789273221, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1817773807346566817, guid: 12c46a590583857498500b48cf9c896f, type: 3}
 --- !u!54 &8058588292388088586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -429,3 +415,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!135 &5072029063760684372
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840248972049824429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Center: {x: 0.0000005066394, y: 0.39450574, z: -1.179612e-16}

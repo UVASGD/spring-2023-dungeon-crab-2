@@ -36,6 +36,10 @@ public class keyScript : MonoBehaviour
             {
                 GameManager.instance.keysCollected.Add(id);
             }
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.Play("Thwink");
+            }
             gameObject.SetActive(false);
         }
     }

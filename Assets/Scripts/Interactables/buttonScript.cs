@@ -63,12 +63,13 @@ public class buttonScript : MonoBehaviour
             return;
         }
 
+        if(other.gameObject.tag == "Projectiles")
+        {
+            return;
+        }
+
 
         thingsOnButton.Add(other.gameObject);
-        if (thingsOnButton.Count > 0){
-
-            
-        }
         
     }
 
@@ -79,12 +80,17 @@ public class buttonScript : MonoBehaviour
         {
             return;
         }
+        if (other.gameObject.tag == "Projectiles")
+        {
+            return;
+        }
 
         thingsOnButton.Remove(other.gameObject);
         if (thingsOnButton.Count == 0)
         {
             setInactive();
         }
+        
 
     }
 

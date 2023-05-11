@@ -2050,7 +2050,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3073248170059954240, guid: db4cbbdf2369103439c8d70f44364777, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 3073248170059954240, guid: db4cbbdf2369103439c8d70f44364777, type: 3}
       propertyPath: m_LocalScale.y
@@ -6145,7 +6145,7 @@ Transform:
   - {fileID: 809412592}
   - {fileID: 770770942}
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &293308909 stripped
 Transform:
@@ -14347,38 +14347,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tutorial Text (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_text
-      value: after grabbing a key,press e next to a door to unlock it
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_margin.x
-      value: 1.5796332
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_margin.z
-      value: 1.8097746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4282927176
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
 --- !u!1001 &665221772
@@ -15089,7 +15057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6784620587483053549, guid: fa0a6d17d5e15274a99c8850017f56b8, type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 6784620587483053549, guid: fa0a6d17d5e15274a99c8850017f56b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39364,7 +39332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094011682824728728, guid: d98fb1927e2fb6d4fbb302578fa38f40, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6596271196905178742, guid: d98fb1927e2fb6d4fbb302578fa38f40, type: 3}
       propertyPath: lastSceneName
@@ -44395,7 +44363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 381579052900818877, guid: 4e2fdd321f41f6b46ab404e66a4af849, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 381579052900818877, guid: 4e2fdd321f41f6b46ab404e66a4af849, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44863,7 +44831,7 @@ Transform:
   - {fileID: 1063969511}
   - {fileID: 543744404}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1949804532 stripped
 Transform:
@@ -46521,7 +46489,7 @@ Transform:
   - {fileID: 691203892}
   - {fileID: 2008676532}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1992826325 stripped
 Transform:
@@ -50124,7 +50092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099357382359782311, guid: 87d3a240aa1857b449a5f341a1cb3f0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3099357382359782365, guid: 87d3a240aa1857b449a5f341a1cb3f0c, type: 3}
       propertyPath: m_Pivot.x
@@ -50267,6 +50235,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThemeTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 7364381708026480422, guid: 91b0a41ebb8d4434795cc860c1ba1e36, type: 3}
+      propertyPath: m_Size.y
+      value: 3.760762
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364381708026480422, guid: 91b0a41ebb8d4434795cc860c1ba1e36, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3803812
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91b0a41ebb8d4434795cc860c1ba1e36, type: 3}
 --- !u!1001 &7664338575952436691
@@ -50276,6 +50252,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4880796103460106384, guid: a73fab9501a8d47478baba3bac00160a, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880796103460106384, guid: a73fab9501a8d47478baba3bac00160a, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6074849162362615561, guid: a73fab9501a8d47478baba3bac00160a, type: 3}
       propertyPath: m_RootOrder
       value: 25

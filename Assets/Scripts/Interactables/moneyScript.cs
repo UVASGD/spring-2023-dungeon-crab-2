@@ -36,6 +36,10 @@ public class moneyScript : MonoBehaviour
             {
                 GameManager.instance.moneyCollected.Add(id);
             }
+            if (AudioManager.instance != null)
+            {
+                AudioManager.instance.Play("Thwink");
+            }
             gameObject.SetActive(false);
         }
     }

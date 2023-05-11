@@ -24,7 +24,7 @@ public class PlayerTalkScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && GameManager.instance.currentState == GameManager.GameState.Play && Time.time - timeLastTalk > cooldownAfterTalking)
         {
-            if (Physics.Raycast(transform.position, transform.forward, out var hit, talkRange, layersToTalkTo, QueryTriggerInteraction.Ignore))
+            if (Physics.SphereCast(transform.position, 0.2f, transform.forward, out var hit, talkRange, layersToTalkTo, QueryTriggerInteraction.Ignore))
             {
                 DialogueTrigger temp = hit.collider.gameObject.GetComponent<DialogueTrigger>();
                 if(temp)

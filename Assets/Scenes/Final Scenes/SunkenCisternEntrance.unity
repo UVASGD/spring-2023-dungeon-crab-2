@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1.3109468, g: 1.3109468, b: 1.3109468, a: 1}
+  m_AmbientSkyColor: {r: 1.3410897, g: 1.3410897, b: 1.3410897, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.7254902, g: 0.75686276, b: 0.8392157, a: 1}
+  m_SubtractiveShadowColor: {r: 0.667759, g: 0.61958, b: 0.7169812, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -8772,7 +8772,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-142458
+  m_Name: pb_Mesh-180530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14048,20 +14048,8 @@ PrefabInstance:
       value: "Hold E \nto climb ladders"
       objectReference: {fileID: 0}
     - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4282927176
+      value: 4286743170
       objectReference: {fileID: 0}
     - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -14346,6 +14334,22 @@ PrefabInstance:
     - target: {fileID: 7840178371608470439, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_Name
       value: Tutorial Text (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286743170
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
@@ -33184,20 +33188,8 @@ PrefabInstance:
       value: 3.193185
       objectReference: {fileID: 0}
     - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4282927176
+      value: 4286743170
       objectReference: {fileID: 0}
     - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -37755,20 +37747,8 @@ PrefabInstance:
       value: "Press E next to a box\n to pick it up"
       objectReference: {fileID: 0}
     - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.2830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4282927176
+      value: 4286743170
       objectReference: {fileID: 0}
     - target: {fileID: 8654457198522562068, guid: 36d0d20e8f839e34690577f7518226b6, type: 3}
       propertyPath: m_HorizontalAlignment
